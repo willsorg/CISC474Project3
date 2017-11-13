@@ -1,0 +1,61 @@
+<html lang="en" ng-app>
+  <head>
+    <title>User Homepage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="/css/bootstrap-responsive.min.css">
+    <script type="text/javascript" src="homepage.js"></script>
+    <style>
+      body {
+        padding-top: 30px;
+      }
+      td{
+        padding-left: 50px;
+        padding-right: 50px;
+      }
+      
+      
+     
+   
+    </style>
+  </head>
+  
+  <body onload=buildPage()>
+      <center>
+        <h1> User Dashboard </h1>
+        <div id="userName">  </div>
+        <hr>
+        <table width=100% height=100%><tr><td width=50%  padding-left = 10px>
+              <h2> Log In History</h2>
+              
+              <ul id = "logHistory" style="height:300px;width:400px;border:1px solid #ccc;overflow:auto;">
+                  <li> Loading . . . .</li>
+                  
+              </ul>
+              </td>
+           <td width = 50% padding-left = 10px>
+             <h2> Account Control</h2>
+             <h3> Log Out </h3>
+             <button id="logOut" onclick=startLogOut()> Log Out </button>
+             
+             <h3> Change Password </h3>
+             <form>
+                  <input type="email" id = "email" placeholder = "E-Mail" >
+                  <input type="password" id = "password" placeholder = "Current Password">
+                  <input type="password" id = "newPassword" placeholder = "New Password">
+                  <input type="password" id = "confirm" placeholder = "Confirm Password">
+                  <button id="submit" onclick=changePassword()> Update </button>
+             </form>
+             
+             
+        </td></tr></table>
+    
+    
+    
+    
+    <hr>
+    
+    <p>  Thats a nice web app you got there, it would be a shame if somethin' were to. . . happen to it. </p>
+    </center>
+  </body>
+</html>

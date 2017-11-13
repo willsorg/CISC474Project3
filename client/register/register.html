@@ -1,0 +1,31 @@
+<html lang="en" ng-app>
+  <head>
+    <title>Register</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="/css/bootstrap-responsive.min.css">
+    <script type="text/javascript" src="register.js"></script>
+    <style>
+      body {
+        padding-top: 60px;
+      }
+    </style>
+  </head>
+  
+  <body>
+      <center>
+    <h1>Register for an Account</h1>
+    <form>
+        <h2>Password must be at least 7 Characters Long</h2>
+        
+        <input id="email" type="email" placeholder = "Email">
+        <input id="name" type="text" placeholder = "Name">
+        <input id="pass" type="password" placeholder = "Password">
+    </form>
+    
+    <button id="submit" onclick=startRegister()> Register </button>
+    
+    <h4>  Already Registered?   <a href = "../login/login.html"> Log In Here </a></h4>
+      </center>
+  </body>
+</html>

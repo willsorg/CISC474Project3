@@ -1,0 +1,14 @@
+commands to run
+
+mongod --dbpath *Your Path to *\project3\data
+
+then open another command window, and change the directory to 
+*\project3 and run 
+node server.js
+- this starts the backend
+
+then open another command window, and change the directory to *\project3\project3\ and run
+ng serve
+-this starts the front end
+
+then open localhost:4200
