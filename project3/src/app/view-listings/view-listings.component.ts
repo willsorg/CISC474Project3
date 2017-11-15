@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Inject, OnInit, ViewEncapsulation } from '@angular/core';
+import { property } from '../services/property.service';
 
 @Component({
   selector: 'app-view-listings',
@@ -8,9 +9,15 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class ViewListingsComponent implements OnInit {
 
-  constructor() { }
+	apiSvc: any;
+	properties : any;
+
+    constructor(@Inject(property) _apiSvc: property) {
+  		this.apiSvc = _apiSvc;
+    }
 
   ngOnInit() {
+  	this.properties = this.apiSvc.getListings();
+  	console.log(this.properties);
   }
-
 }

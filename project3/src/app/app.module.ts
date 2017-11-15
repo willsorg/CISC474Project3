@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { propertyModule } from './services/property.module';
 import {RouterModule, Routes} from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -25,7 +25,7 @@ const routes: Routes = [
     SearchListingsComponent
   ],
   imports: [
-    BrowserModule, RouterModule.forRoot(routes), NgbModule.forRoot()
+    BrowserModule, RouterModule.forRoot(routes), NgbModule.forRoot(), propertyModule
   ],
   exports: [RouterModule],
   providers: [],
