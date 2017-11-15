@@ -1,21 +1,26 @@
-<nav class="navbar-wrapper navbar-default navbar-fixed-top navbar-static-top" role="navigation">
-  <div class="container">
+<nav class="navbar-wrapper navbar-default navbar-fixed-top navbar-static-top nav-container" role="navigation">
+  <div class="">
     <div class="navbar-header">
-      <a class="navbar-brand text-success" href="">Housing Search</a>
+      <a class="navbar-brand brand" href="#">Housing Search</a>
+      <button type="button" class="btn btn-outline-primary" (click)="isCollapsed = !isCollapsed"
+        [attr.aria-expanded]="!isCollapsed" aria-controls="navMenu"><span class="glyphicon glyphicon-menu-hamburger"></span></button>
     </div>
-    <div class="btn-group">
+    <div>
+      <div class="navbar" id ="navMenu" [ngbCollapse]='isCollapsed'>
         <ul class="nav navbar-nav">
           <li routerLinkActive='active'>
-            <button routerLink="home">Home</button>
+            <a routerLink="home" class="navbar-link links">Home</a>
           </li>
           <li routerLinkActive='active'>
-            <button routerLink="viewListings"> View Listings </button>
+            <a routerLink="viewListings" class="links">View Listings</a>
           </li>
           <li routerLinkActive='active'>
-            <button routerLink="postListing"> Post Listings</button>
+            <a routerLink="postListing" class="links">Post Listings</a>
           </li>
         </ul>
+      </div>
     </div>
   </div>
 </nav>
 <router-outlet></router-outlet>
+
