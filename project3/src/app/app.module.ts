@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { PostListingComponent } from './post-listing/post-listing.component';
 import { ViewListingsComponent } from './view-listings/view-listings.component';
 import { SearchListingsComponent } from './search-listings/search-listings.component';
+import { IndividualListingComponent } from './individual-listing/individual-listing.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -22,7 +23,8 @@ const routes: Routes = [
     HomeComponent,
     PostListingComponent,
     ViewListingsComponent,
-    SearchListingsComponent
+    SearchListingsComponent,
+    IndividualListingComponent
   ],
   imports: [
     BrowserModule, RouterModule.forRoot(routes), NgbModule.forRoot(), propertyModule
