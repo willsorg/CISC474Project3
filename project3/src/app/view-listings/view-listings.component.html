@@ -1,16 +1,18 @@
-<h1>Current Properties Available</h1>
+<div class="listingContainer">
+  <h1>Current Properties Available</h1>
 
-<ul id="Property List">
-  <li>Currently No Properties to Display</li>
+  <ul id="Property List">
+    <li>Currently No Properties to Display</li>
 
-</ul>
+  </ul>
 
-<div class = "properties-list">
-<li *ngFor = "let p of properties">
-{{p.Address}}
-</li>
+  <div class = "properties-list">
+  <li *ngFor = "let p of properties">
+  {{p.Address}}
+  </li>
+  </div>
+
+  <p>
+    The greatest property search around!
+  </p>
 </div>
-
-<p>
-  The greatest property search around!
-</p>
