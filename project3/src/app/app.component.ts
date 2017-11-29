@@ -1,6 +1,7 @@
 import { Component, Inject } from '@angular/core';
 //import { PostPropertyService } from './postProperty.service';
 import { property } from './services/property.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -12,9 +13,11 @@ export class AppComponent {
   apiSvc : any;
   properties : any;
 
-  constructor(@Inject(property) _apiSvc: property) {
+  constructor(@Inject(property) _apiSvc: property, private http: HttpClient) {
   		this.apiSvc = _apiSvc;
     }
+    
+
 
   ngOnInit(){
     console.log(this.apiSvc.getListings());

@@ -9,6 +9,8 @@ import { PostListingComponent } from './post-listing/post-listing.component';
 import { ViewListingsComponent } from './view-listings/view-listings.component';
 import { SearchListingsComponent } from './search-listings/search-listings.component';
 import { IndividualListingComponent } from './individual-listing/individual-listing.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule }   from '@angular/forms';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -27,7 +29,7 @@ const routes: Routes = [
     IndividualListingComponent
   ],
   imports: [
-    BrowserModule, RouterModule.forRoot(routes), NgbModule.forRoot(), propertyModule
+    BrowserModule, RouterModule.forRoot(routes), NgbModule.forRoot(), propertyModule, HttpClientModule, FormsModule
   ],
   exports: [RouterModule],
   providers: [],
