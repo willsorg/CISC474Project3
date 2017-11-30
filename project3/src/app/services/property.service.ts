@@ -16,9 +16,9 @@ export class property {
 
 
   getListings = () => {
-  	return [{'Address':'14 Annabelle','Tenants':'4','Rent':'$750','Bathrooms':'1','Bedrooms':'4','Type':'House'},
-            {'Address':'12 Annabelle','Tenants':'4','Rent':'$750','Bathrooms':'1','Bedrooms':'4','Type':'House'},
-            {'Address':'Madeline Crossing','Tenants':'6','Rent':'$500','Bathrooms':'3','Bedrooms':'4','Type':'Apartment'}];
+  	return [{'id':'1','Address':'14 Annabelle','Tenants':'4','Rent':'$750','Bathrooms':'1','Bedrooms':'4','Type':'House'},
+            {'id':'2','Address':'12 Annabelle','Tenants':'4','Rent':'$750','Bathrooms':'1','Bedrooms':'4','Type':'House'},
+            {'id':'3','Address':'Madeline Crossing','Tenants':'6','Rent':'$500','Bathrooms':'3','Bedrooms':'4','Type':'Apartment'}];
   }
 
 

@@ -8,7 +8,7 @@
 
   <div class = "properties-list">
   <li *ngFor = "let p of properties">
-  {{p.Address}}
+  <a [routerLink]="['/individual-listing', p.id]">{{p.Address}}</a>
   </li>
   </div>
 
