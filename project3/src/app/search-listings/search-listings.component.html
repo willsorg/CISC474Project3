@@ -8,12 +8,14 @@
     Bedrooms: <br>
     <input type="text" id="bedrooms"><br><br>
     Number of Inhabitants: <br>
-    <input type="text" id="inhabitants"><br><br>
-    Type:<br>
-    </p>
-    <input type="radio" name="apartment" value="apartment" checked> Apartment<br>
-    <input type="radio" name="townhouse" value="townhouse"> Townhouse<br>
-    <input type="radio" name="house" value="house"> Apartment <br>
+    <input type="text" id="inhabitants"><br>
+  </p>
+  <div class="form-group">
+    <label for="type">Type:</label> <br>
+    <select class="form-control" [(ngModel)]='type' name="type" required>
+      <option *ngFor="let t of types" [value]="t">{{t}}</option>
+    </select>
+  </div>
     <br>
     <button id = "submit"> Search! </button> 
     

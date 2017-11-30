@@ -8,3 +8,18 @@
         padding-top: 200px;
     }
 }
+
+h1 {
+    font-family: 'Dancing Script', Georgia, Times, serif;
+    margin-top: 50px;
+	font-size: 59px;
+	line-height: 60px;
+    font-weight: bold;
+}
+h2 {
+	font-family: 'Josefin Sans', Helvetica, Arial, sans-serif;
+	font-size: 30px;
+    line-height: 40px;
+    font-weight: bold;
+}
+

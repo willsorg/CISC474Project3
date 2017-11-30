@@ -9,6 +9,8 @@ import { property } from '../services/property.service';
 })
 export class SearchListingsComponent implements OnInit {
 
+  types = ['Apartment', 'House',
+  'Townhouse'];
 	apiSvc: any;
 	properties : any;
 
