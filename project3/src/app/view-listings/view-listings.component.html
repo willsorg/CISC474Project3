@@ -2,9 +2,9 @@
   <h1>Current Properties Available</h1>
   <br>
   
-  <div class = "properties-list">
+ <div class = "properties-list">
   <li *ngFor = "let p of properties">
-  {{p.address}}
+  <a [routerLink]="['/individual-listing', p.id]">{{p.Address}}</a>
   </li>
   </div>
 
