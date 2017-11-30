@@ -1,74 +1,33 @@
 <div class="listingContainer">
   <h1>Post a Property Listing</h1> 
   <h2>Enter a property that is available for rent below</h2> 
-
-  <script>
-    
-        function submitPost(){
-          console.log("Submit Post Called");
-        if(document.getElementById("address").value != null && document.getElementById("rent").value != null &&
-          document.getElementById("bedrooms").value != null && document.getElementById("bathrooms").value != null &&
-          document.getElementById("owner").value != null){
-                      var type = 'Apartment';
-                      if (document.getElementById('th').checked) {
-                        rate_value = 'Townhouse';
-                      }
-                      else if(document.getElementById('th').checked) {
-                        rate_value = 'House';
-                      }
-    
-                      //console.log("request Prepared");
-                      
-                      var http = new XMLHttpRequest();
-                      var url = "http://localhost:3000/api/postProperty";
-                      var params = JSON.stringify({"address":document.getElementById("address").value, "type":type, "rent":document.getElementById("rent").value,
-                      "owner":document.getElementById("owner").value, "bedroom":getElementById("bedrooms").value, "bathroom":document.getElementById("bathrooms").value, "tenant":document.getElementById("bathrooms").value});
-                      http.open("POST", url, true);
-    
-                      //Send the proper header information along with the request
-                      http.setRequestHeader("Content-type", "application/json");
-    
-                      http.onreadystatechange = function() {//Call a function when the state changes.
-                          if(http.readyState == 4 && http.status == 200) {
-                              //a redirect will eventually be here
-                              
-                              alert("Succesfully Registered User");
-                              window.location.href= "http://localhost:4200/home";
-                          }
-                      }
-                      http.send(params);
-                      }
-                      
-                      
-            
-            else{
-                alert( "Post Failed" ) ;
-            }
-          }
-      </script>
-  <form id = "propteryPosting">
+ 
+  <form name = "propteryPosting">
       <p>Address: <br>
-      <input type="text" id="address"><br> <br>
+      <input type="text" [(ngModel)]='address' name="address"><br> <br>
       Rent: <br>
-      <input type="text" id="rent"><br> <br>
+      <input type="text" [(ngModel)]='rent' name="rent"><br> <br>
       Bedrooms: <br>
-      <input type="text" id="bedrooms"><br> <br>
+      <input type="text" [(ngModel)]='bedrooms'name="bedrooms"><br> <br>
       Bathrooms: <br>
-      <input type="text" id="bathrooms"><br> <br>
+      <input type="text" [(ngModel)]='bathrooms' name="bathrooms"><br> <br>
       Number of Tenants: <br>
-      <input type="text" id="inhabitants"><br> <br>
-      Type:
+      <input type="text" [(ngModel)]='tenants' name="inhabitants"><br> <br>
+      
       </p>
-      <input type="radio" id = 'apt' name="type" value="apartment" checked> Apartment<br>
-      <input type="radio" id = 'th' name="type" value="townhouse"> Townhouse<br>
-      <input type="radio" id = 'h' name="type" value="house"> House <br>
+      <div class="form-group">
+        <label for="type">Type:</label>
+        <select class="form-control" [(ngModel)]='type' name="type" required>
+          <option *ngFor="let t of types" [value]="t">{{t}}</option>
+        </select>
+      </div>
  <p>
    <br>
       Owner/Posters Name: <br>
-      <input type = "text" id = "owner"><br>
+      <input type = "text" [(ngModel)]='owner' name = "owner"><br>
         </p>
       <br>
-      <button (click) = "submitPost()" id = "submit"> Post Listing! </button> 
+      <button (click) = "postData()" id = "submit"> Post Listing! </button> 
       
     
     </form>

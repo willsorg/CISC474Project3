@@ -18,9 +18,9 @@ module.exports.postProperty = function(req, res) {
   property.type = req.body.type;
   property.rent = req.body.rent;
   property.owner = req.body.owner;
-  property.bedroom = req.body.bedroom;
-  property.bathroom = req.body.bathroom;
-  property.tenant = req.body.tenant;
+  property.bedrooms = parseInt(req.body.bedroom, 10);
+  property.bathrooms = parseInt(req.body.bathroom, 10);
+  property.tenants = parseInt(req.body.tenants, 10);
   //property.
  
   
@@ -88,25 +88,12 @@ module.exports.propertyByType = function(req, res){
 }
 // this is a general result
 module.exports.allProperties = function(req, res){
-  
+  console.log("recieved");
+  //mongoose get all docs. I think here answers your question directly
+  Property.find(function (err, results) {
+    console.log(results);
+    res.json(results);
+    res.status(200);
     
-      
-      // lookup the user in the DB by pulling their email from the session
-      Property.find( function (err, property) {
-        if(err){
-          res.status(404);
-        }
-       
-        else {
-          //return the whole thing
-  
-          res.status(200);
-          
-          res.json({
-            
-            "properties" : property
-          });
-        
-        }
-      });
-}
+  });
+};

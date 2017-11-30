@@ -19,9 +19,10 @@ var propertySchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  
   bedrooms: Number,
   bathrooms: Number,
-  tenants: Number,
+  tenants: Number
   
   //images: [String] // This is going to be a array of the image locations.  they will be stored somewhere
 });
