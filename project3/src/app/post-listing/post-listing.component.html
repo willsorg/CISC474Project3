@@ -16,7 +16,7 @@
       
       </p>
       <div class="form-group">
-        <label for="type">Type:</label>
+        <label for="type">Type:</label> <br>
         <select class="form-control" [(ngModel)]='type' name="type" required>
           <option *ngFor="let t of types" [value]="t">{{t}}</option>
         </select>

@@ -11,3 +11,7 @@
 p {
     font-weight: bold;
 }
+.form-control {
+    display: inline-block;
+    width: 175px;
+}
