@@ -1,14 +1,15 @@
 <div class="listingContainer">
   <h1> Search For Properties by Type</h1>
+  <h2> Fill All Applicable Fields</h2> 
 
   <form id = "searchField">
     <p>
       Maximum Rent: <br>
-    <input type="text" id="maxrent"><br><br>
+    <input type="text" [(ngModel)]='rent' name="rent"><br><br>
     Bedrooms: <br>
-    <input type="text" id="bedrooms"><br><br>
-    Number of Inhabitants: <br>
-    <input type="text" id="inhabitants"><br>
+    <input type="text" [(ngModel)]='bedrooms' name='bedrooms'><br><br>
+    Number of Tenants: <br>
+    <input type="text" [(ngModel)]='tenants' name='tenants'><br>
   </p>
   <div class="form-group">
     <label for="type">Type:</label> <br>
@@ -17,14 +18,21 @@
     </select>
   </div>
     <br>
-    <button id = "submit"> Search! </button> 
+    <button id = "submit" (click) = "searchData()" > Search! </button> 
+
     
 
   </form>
 
+  <div class = "properties-list">
+    <li *ngFor = "let p of filteredType">
+    <a [routerLink]="['/individual-listing', p.id]">{{p.address}}</a>
+    </li>
+  </div> 
+
   <p>
 
     <br>
-    search-listings works!
+    Sticky Floors not Included
   </p>
 </div>
