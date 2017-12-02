@@ -2,11 +2,22 @@
   <h1>Current Properties Available</h1>
   <br>
   
- <div class = "properties-list">
-  <li *ngFor = "let p of properties">
-  <a [routerLink]="['/individual-listing', p.id]">{{p.address}}</a>
-  </li>
-  </div>
+  <div class = "properties-list">
+      <ul>
+      <li *ngFor = "let p of properties">
+      <div id = "propertyBox">
+        <div id = "propertyRow">
+        <div id = "boxAddress">
+          <a [routerLink]="['/individual-listing', p.id]">{{p.address}}</a>
+        </div>
+        <div id = "boxDetails">Rent:  {{p.rent}}</div>
+        <div id = "boxDetails">Tenants:  {{p.tenants}}</div>
+        <div id = "boxDetails">Bedrooms:  {{p.bedrooms}}</div>
+      </div>
+      </div>
+      </li>
+      </ul>
+    </div> 
 
   <p>
       <br>

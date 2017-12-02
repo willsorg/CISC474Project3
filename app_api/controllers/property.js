@@ -88,10 +88,10 @@ module.exports.propertyByType = function(req, res){
 }
 // this is a general result
 module.exports.allProperties = function(req, res){
-  console.log("recieved");
+  //console.log("recieved");
   //mongoose get all docs. I think here answers your question directly
   Property.find(function (err, results) {
-    console.log(results);
+    
     res.json(results);
     res.status(200);
     

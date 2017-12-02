@@ -1,6 +1,49 @@
 .listingContainer{
     padding-top: 100px;
     text-align: center;
+    padding-left : 90px;
+}
+#properties-list{
+    text-align: right;
+    
+}
+ul{ 
+    list-style-type: none; 
+}
+
+#propertyBox{
+    display: table;
+    border-bottom: 3px solid rgb(45, 39, 102);
+    text-align: center;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+#propertyRow{
+    
+    display: table-row;
+}
+#boxAddress{
+    display: table-cell;
+    padding: 15px;
+    font-family: 'Josefin Sans', Helvetica, Arial, sans-serif;
+    font-size: 24px;
+}
+#boxDetails{
+    font-family: 'Josefin Sans', Helvetica, Arial, sans-serif;
+    display: table-cell;
+    padding: 15px;
+    
+}
+
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 @media only screen and (max-width: 760px) {

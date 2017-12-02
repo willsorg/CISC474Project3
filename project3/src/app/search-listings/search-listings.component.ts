@@ -40,6 +40,7 @@ export class SearchListingsComponent implements OnInit {
   	this.http.get('http://localhost:3000/api/all').subscribe(data => {
       console.log(data);
       this.properties = data;
+      this.filteredType = this.properties;
     });
   }
 

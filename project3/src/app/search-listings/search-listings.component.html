@@ -1,5 +1,13 @@
+
+
+
+
 <div class="listingContainer">
-  <h1> Search For Properties by Type</h1>
+    <h1> Search For Properties by Type</h1>
+    
+    
+    <div class="row">
+  <div class = "column" style = " float: left; width: 20%;">
   <h2> Fill All Applicable Fields</h2> 
 
   <form id = "searchField">
@@ -23,16 +31,33 @@
     
 
   </form>
+  </div>
+
+  <div class="column" style = " float: left; width: 80%;">
 
   <div class = "properties-list">
+    <ul>
     <li *ngFor = "let p of filteredType">
-    <a [routerLink]="['/individual-listing', p.id]">{{p.address}}</a>
+    <div id = "propertyBox">
+      <div id = "propertyRow">
+      <div id = "boxAddress">
+        <a [routerLink]="['/individual-listing', p.id]">{{p.address}}</a>
+      </div>
+      <div id = "boxDetails">Rent:  {{p.rent}}</div>
+      <div id = "boxDetails">Tenants:  {{p.tenants}}</div>
+      <div id = "boxDetails">Bedrooms:  {{p.bedrooms}}</div>
+    </div>
+    </div>
     </li>
+    </ul>
   </div> 
-
-  <p>
-
-    <br>
-    Sticky Floors not Included
-  </p>
+  </div>
 </div>
+
+<p>
+    
+        <br>
+        Sticky Floors not Included
+      </p>
+</div>
+  
