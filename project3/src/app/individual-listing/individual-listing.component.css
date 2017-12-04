@@ -18,13 +18,7 @@
     
 }
 
-#otherStyle{
-    display: table;
-    position: absolute;
-    padding-bottom: 150px;
-    border-bottom: 3px solid rgb(45, 39, 102);
-    text-align: center
-}
+
 .info-table-container {
     font-family: 'Josefin Sans', Helvetica, Arial, sans-serif;
     font-size: 24px;
