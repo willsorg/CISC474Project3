@@ -18,11 +18,11 @@ export class ViewListingsComponent implements OnInit {
     }
 
   ngOnInit() {
-  	// this.http.get('http://localhost:3000/api/all').subscribe(data => {
-   //    console.log(data);
-   //    this.properties = data;
-      this.properties = [{"id":"1","address":"14 Annabelle St","rent":"500","bedrooms":"4","bathrooms":"1","tenants":"4"},
-                          {"id":"2","address":"12 Annabelle St","rent":"500","bedrooms":"4","bathrooms":"1","tenants":"4"}]
+  	this.http.get('http://localhost:3000/api/all').subscribe(data => {
+      console.log(data);
+      this.properties = data;
+      //this.properties = [{"id":"1","address":"14 Annabelle St","rent":"500","bedrooms":"4","bathrooms":"1","tenants":"4"},
+      //                    {"id":"2","address":"12 Annabelle St","rent":"500","bedrooms":"4","bathrooms":"1","tenants":"4"}]
 
     });
   }

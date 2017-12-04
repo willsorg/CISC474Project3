@@ -2,6 +2,7 @@ import { Component, Inject, OnInit, ViewEncapsulation } from '@angular/core';
 import { property } from '../services/property.service';
 import { Property } from '../property';
 import { ActivatedRoute } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -14,26 +15,48 @@ export class IndividualListingComponent implements OnInit {
 
 	apiSvc: any;
 	properties : any;
-  property: Property = new Property(1,"14 Annabelle St, Newark DE",4,500,1,4,"House");
+  property: Property;
   apiKey : string = "AIzaSyAw_H4lE8TiLAl8sNhvbtfaQ5LlODwYAxc"
 
-  link: string = "https://maps.googleapis.com/maps/api/streetview?size=450x300&location=14 Annabelle St, Newark DE&key=AIzaSyAw_H4lE8TiLAl8sNhvbtfaQ5LlODwYAxc"
+  link: string = "https://maps.googleapis.com/maps/api/streetview?size=450x300&location=" + this.route.snapshot.params['id'] + ", Newark DE&key=" + this.apiKey;
 
 
-    constructor(@Inject(property) _apiSvc: property, private route:ActivatedRoute) {
+    constructor(@Inject(property) _apiSvc: property, private route:ActivatedRoute, private http: HttpClient) {
   		this.apiSvc = _apiSvc;
     }
 
   ngOnInit() {
-  	this.properties = this.apiSvc.getListings();
-  	console.log(this.properties);
+  	
     let id = this.route.snapshot.params['id'];
     console.log(id);
-    this.link = this.findAddressURL();
+    
+    var data = {"address": id};
+    console.log("search for call");
+    this.http.post('http://localhost:3000/api/propertyByAddress', data)
+    .subscribe(
+
+      res => {
+        console.log("Results: ");
+        console.log(res);
+        this.properties = res;
+        console.log(this.properties);
+        this.property = this.properties[0];
+      },
+      err => {
+        console.log("Error occured");
+        console.log(err);
+      }
+    );
+
+    this.link = "https://maps.googleapis.com/maps/api/streetview?size=450x300&location=" + this.properties.address + ", Newark DE&key=" + this.apiKey;
+
+    console.log(this.link);
+
+    
   }
 
   findAddressURL() {
-    let url = "https://maps.googleapis.com/maps/api/streetview?size=450x300&location=" + this.property.address + "&key=" + this.apiKey;
+    let url = "https://maps.googleapis.com/maps/api/streetview?size=450x300&location=" + this.properties.address + ", Newark DE&key=" + this.apiKey;
     return url;
   }
 

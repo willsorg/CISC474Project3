@@ -13,4 +13,8 @@ router.get('/all', ctrlProperty.allProperties);
 router.post('/postProperty', ctrlProperty.postProperty);
 
 
+//Find property
+router.post('/propertyByAddress', ctrlProperty.propertyByAddress);
+
+
 module.exports = router;

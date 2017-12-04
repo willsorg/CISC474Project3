@@ -1,22 +1,27 @@
-<div class = "listing-container">
+
+<div class = "listing-container" id = "mainContainer">
+
+        <div class="title">
+                {{properties.address}}
+        </div>
+        <div class= "image-container">
+                <img src = {{link}}> 
+                
+        </div>
 <div class = "row">
-<div class = "col-md-5">
-<div class="title">
-{{property.address}}
-<div class= "image-container">
-<img src = {{link}}> 
-</div>
-</div>
-</div>
+
 <div class = "col-md-7">
 <div class = "info-table-container">
 <table>
-<tr> Rent: {{property.rent}} </tr>
-<tr> Tenants: {{property.tenants}} </tr>
-<tr> Bedrooms: {{property.bedrooms}} </tr>
-<tr> Bathroom: {{property.bathrooms}} </tr>
+    
+<tr> Rent: {{properties.rent}} </tr>
+<tr> Tenants: {{properties.tenants}} </tr>
+<tr> Bedrooms: {{properties.bedrooms}} </tr>
+<tr> Bathrooms: {{properties.bathrooms}} </tr>
+<tr> Owner: {{properties.owner}}</tr> 
 </table>
 </div>
 </div>
 </div>
 </div>
+

@@ -46,46 +46,25 @@ module.exports.postProperty = function(req, res) {
 };
 
 
-module.exports.propertyByType = function(req, res){
-
-  if (req.body.type != null) { // Check if session exists
+module.exports.propertyByAddress = function(req, res){
+console.log(req.body.address);
+  if (req.body.address != null) { // Check if session exists
     
     // lookup the user in the DB by pulling their email from the session
-    Property.find({ type: req.body.type }, function (err, property) {
-      if(err){
-        // all is the redirect if there is a bad search, it will
-        // just return all properties in the database
-        res.status(200);
-        res.redirect('/all');
+    var winner
+    Property.find(function (err, results) {
+      for(i = 0; i < results.length; i++){
+        if(results[i].address == req.body.address){
+          winner = results[i];
+        }
       }
-      if (!property) {
-        // all is the redirect if there is a bad search, it will
-        // just return all properties in the database
-        res.status(200);
-        res.redirect('/all');
-      }
-     
-      else {
-        // As of now, the only thing that is being passed
-        // is the array of objects that were found
-        // cool beans
-
-        res.status(200);
-        
-        res.json({
-          
-          "properties" : property
-        });
+      res.json(winner);
+      res.status(200);
+      
+    });
       
       }
-    });
-  }
-  else {
-    
-    res.status(200);
-    res.redirect('/all');
-  }
-}
+    }
 // this is a general result
 module.exports.allProperties = function(req, res){
   //console.log("recieved");
