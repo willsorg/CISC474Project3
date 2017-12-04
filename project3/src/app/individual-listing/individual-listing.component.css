@@ -1,5 +1,21 @@
-.listingContainer{
+.listing-container{
     padding-top: 100px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.image-container {
+    padding-top:20px;
+}
+
+.info-table-container {
+    padding-top:45px;
+    padding-left:15px;
+}
+
+.title {
+    font-family: 'Josefin Sans', Helvetica, Arial, sans-serif;
+    font-size: 24px;
 }
 
 @media only screen and (max-width: 760px) {
