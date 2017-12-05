@@ -1,18 +1,21 @@
 .listing-container{
-    padding-top: 100px;
+    padding-top: 40px;
     padding-left: 50px;
     padding-right: 50px;
+    
 }
 
 .image-container {
     padding-top:20px;
+   
 }
 #mainContainer{
     display: table;
-    position: absolute;
     padding-bottom: 150px;
     border-bottom: 3px solid rgb(45, 39, 102);
     text-align: center;
+    margin: 0 auto;
+   
     
     
     
@@ -24,6 +27,7 @@
     font-size: 24px;
     padding-top:45px;
     padding-left:15px;
+    text-align: left;
 }
 
 .title {
@@ -32,11 +36,15 @@
 	font-size: 59px;
 	line-height: 60px;
     font-weight: bold;
+    
 }
 
 @media only screen and (max-width: 760px) {
     .listingContainer{
         padding-top: 200px;
+       
+        
+        
     }
 }
 h1 {
@@ -45,6 +53,7 @@ h1 {
 	font-size: 59px;
 	line-height: 60px;
     font-weight: bold;
+    
 }
 h2 {
 	font-family: 'Josefin Sans', Helvetica, Arial, sans-serif;

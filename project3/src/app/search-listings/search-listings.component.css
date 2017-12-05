@@ -75,5 +75,10 @@ h2 {
     line-height: 40px;
     font-weight: bold;
 }
+h3 {
+    font-size: 30px;
+    font: 'Berkshire Swash', Helvetica, sans-serif;
+    color: goldenrod;
+}
 
 
