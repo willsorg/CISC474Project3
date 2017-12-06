@@ -15,9 +15,6 @@
     
     text-align: center;
     margin: 0 auto;
-   
-    
-    
     
 }
 
@@ -31,7 +28,7 @@
 }
 
 .title {
-    font-family: 'Dancing Script', Georgia, Times, serif;
+    font-family: 'College Block', Georgia, Times, serif;
     margin-top: 50px;
 	font-size: 59px;
 	line-height: 60px;
@@ -56,7 +53,7 @@
     }
 }
 h1 {
-    font-family: 'Dancing Script', Georgia, Times, serif;
+    font-family: 'College Block', Georgia, Times, serif;
     margin-top: 50px;
 	font-size: 59px;
 	line-height: 60px;
@@ -70,11 +67,12 @@ h2 {
     font-weight: bold;
 }
 
-h3{
+.details{
     font-family: 'Josefin Sans', Helvetica, Arial, sans-serif;
     font-size: 24px;
     padding-top:45px;
     padding-left:15px;
+    float: center;
     text-align: center;
 }
 

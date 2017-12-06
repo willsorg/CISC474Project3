@@ -8,13 +8,13 @@
       <div class="navbar-header">
         <button type="button" class="btn btn-outline-primary pull-left" (click)="isCollapsed = !isCollapsed"
           [attr.aria-expanded]="!isCollapsed" aria-controls="navMenu"><span class="glyphicon glyphicon-menu-hamburger"></span></button>
-        <a class="navbar-brand brand" href="#">Housing Search</a>
+        <a class="navbar-brand brand" href="#">UD Off-Campus</a>
       </div>
       <div>
         <div class="navbar" id ="navMenu" [ngbCollapse]='isCollapsed'>
           <ul class="nav navbar-nav">
             <li routerLinkActive='active'>
-              <a routerLink="home" class="navbar-link links">Home</a>
+              <a routerLink="home" class="navbar-link links" href = "../">Home</a>
             </li>
             <li routerLinkActive='active'>
               <a routerLink="viewListings" class="links">View Listings</a>

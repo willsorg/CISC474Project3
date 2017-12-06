@@ -17,3 +17,7 @@
 .glyphicon-menu-hamburger{
     color: #bdbdbd !important;
 }
+@font-face {
+    font-family: "College Block";
+    src: url("CollegeBlock.otf");
+}

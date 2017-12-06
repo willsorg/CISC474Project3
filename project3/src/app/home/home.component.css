@@ -11,14 +11,22 @@ body {
     
 }
 
-h1 {
-    
-    font-family: 'Dancing Script', Georgia, Times, serif;
+.bannerTitle{
+    font-family: 'College Block', Georgia, Times, serif;
     margin-top: 50px;
 	font-size: 59px;
 	line-height: 60px;
     font-weight: bold;
-    text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
+    text-shadow: -2px 0 yellow, 0 2px yellow, 2px 0 yellow, 0 -2px yellow;
+}
+h1 {
+    
+    font-family: 'College Block', Georgia, Times, serif;
+    margin-top: 50px;
+	font-size: 59px;
+	line-height: 60px;
+    font-weight: bold;
+    
 }
 h2 {
 	font-family: 'Josefin Sans', Helvetica, Arial, sans-serif;
