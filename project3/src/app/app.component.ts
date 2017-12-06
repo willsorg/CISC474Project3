@@ -12,9 +12,11 @@ export class AppComponent {
   title = 'app';
   apiSvc : any;
   properties : any;
+  isCollapsed:boolean;
+  pixelWidth: any;
 
   constructor(@Inject(property) _apiSvc: property, private http: HttpClient) {
-  		this.apiSvc = _apiSvc;
+      this.apiSvc = _apiSvc;
     }
     
 
@@ -23,4 +25,13 @@ export class AppComponent {
     console.log(this.apiSvc.getListings());
     this.properties = this.apiSvc.getListings();
   }
+
+  onResize(event) {
+    this.pixelWidth = event.target.innerWidth;
+    if (this.pixelWidth < 760) {
+      this.isCollapsed = true;
+     }
+  }
 }
+
+

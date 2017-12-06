@@ -11,7 +11,7 @@
         <a class="navbar-brand brand" href="#">UD Off-Campus</a>
       </div>
       <div>
-        <div class="navbar" id ="navMenu" [ngbCollapse]='isCollapsed'>
+        <div class="navbar" id ="navMenu" [ngbCollapse]='isCollapsed' (window:resize)="onResize($event)">
           <ul class="nav navbar-nav">
             <li routerLinkActive='active'>
               <a routerLink="home" class="navbar-link links" href = "../">Home</a>
