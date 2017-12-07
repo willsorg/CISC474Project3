@@ -19,6 +19,10 @@ var propertySchema = new mongoose.Schema({
     type: String,
     required: true
   },
+
+  contact:{
+    type: String
+  },
   
   bedrooms: Number,
   bathrooms: Number,

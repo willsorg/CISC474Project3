@@ -8,6 +8,72 @@ var sendJSONresponse = function(res, status, content){
   res.json(content);
 };
 
+module.exports.postScraped = function(req, res){
+  console.log("Function Called");
+  //console.log(req.body);
+  //console.log(req.body.length);
+  
+  for(var i = 0; i < req.body.length; i++){
+    console.log("Iteration" + i);
+    var property = new Property();
+    parsedData = req.body[i];
+    //console.log(parsedData);
+    
+    console.log(parsedData.address + " returned " + parsedData.address.localeCompare("Address not yet found") );
+  if(parsedData.address.localeCompare("Address not yet found") != 0 ){
+    property.address = parsedData.address;
+    property.type = "N/A";
+    if(parsedData.price.charAt(0) != '$'){
+      property.rent = 0;
+    }
+    else{
+  
+
+    property.rent = parseInt(parsedData.price.slice(1)), 10;
+    }
+    property.owner = parsedData.landlord;
+    if(isNaN(parseInt(parsedData.bedrooms, 10))){
+      property.bedrooms = 0;
+    }
+    else{
+      property.bedrooms = parseInt(parsedData.bedrooms, 10);
+    }
+    if(isNaN(parseInt(parsedData.bathrooms, 10))){
+      property.bathrooms = 0;
+      }
+    else{
+      property.bathrooms = parseInt(parsedData.bathrooms, 10);
+    }
+    if(isNaN(parseInt(parsedData.tenants, 10))){
+       property.tenants = 0;
+    }
+    else{
+      property.tenants = parseInt(parsedData.tenants, 10);
+    }
+    
+    property.contact = parsedData.contact;
+    //property.
+   
+    
+    
+    property.save(function(err) {
+      
+      if (err) {
+        console.log("Property Not written, error");
+        console.log(err);
+        
+      }
+      else{
+      
+      message = "User Saved Success";
+      //console.log(message);
+      }
+      
+    });
+  }}
+  res.status(200);
+};
+
 module.exports.postProperty = function(req, res) {
   
   var property = new Property();

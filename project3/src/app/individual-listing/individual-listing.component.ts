@@ -18,7 +18,7 @@ export class IndividualListingComponent implements OnInit {
   property: Property;
   apiKey : string = "AIzaSyAw_H4lE8TiLAl8sNhvbtfaQ5LlODwYAxc"
 
-  link: string = "https://maps.googleapis.com/maps/api/streetview?size=450x300&location=" + this.route.snapshot.params['id'] + ", Newark DE&key=" + this.apiKey;
+  link: string = "https://maps.googleapis.com/maps/api/streetview?size=450x300&location=" + this.route.snapshot.params['id'] + "&key=" + this.apiKey;
 
 
     constructor(@Inject(property) _apiSvc: property, private route:ActivatedRoute, private http: HttpClient) {

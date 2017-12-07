@@ -13,6 +13,10 @@ router.get('/all', ctrlProperty.allProperties);
 router.post('/postProperty', ctrlProperty.postProperty);
 
 
+// Post Scraped Properties
+
+router.post('/postScrapedProperties', ctrlProperty.postScraped);
+
 //Find property
 router.post('/propertyByAddress', ctrlProperty.propertyByAddress);
 
