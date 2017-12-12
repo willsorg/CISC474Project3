@@ -37,7 +37,7 @@ export class SearchListingsComponent implements OnInit {
     
 
   ngOnInit() {
-  	this.http.get('http://localhost:3000/api/all').subscribe(data => {
+  	this.http.get('http://ec2-34-200-119-236.compute-1.amazonaws.com:3000/api/all').subscribe(data => {
       console.log(data);
       this.properties = data;
       this.filteredType = this.properties;

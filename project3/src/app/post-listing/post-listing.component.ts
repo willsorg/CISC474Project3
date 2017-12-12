@@ -11,6 +11,7 @@ export class PostListingComponent implements OnInit {
 
   types = ['Apartment', 'House',
   'Townhouse'];
+  public successMessage: string;
   public address: string;
   public rent: number;
   public bedrooms: number;
@@ -25,7 +26,7 @@ export class PostListingComponent implements OnInit {
   }
     
   ngOnInit() {
-    
+    this.successMessage = "";
   
     
   }
@@ -35,15 +36,23 @@ export class PostListingComponent implements OnInit {
 
     var data = {"address": this.address, "type": this.type, "rent": this.rent,
      "owner": this.owner, "bedroom":this.bedrooms, "bathroom": this.bathrooms, "tenants": this.tenants};
-    const req = this.http.post('http://localhost:3000/api/postProperty', data)
+    const req = this.http.post('http://ec2-34-200-119-236.compute-1.amazonaws.com:3000/api/postProperty', data)
       .subscribe(
         res => {
           console.log("write successful");
-          console.log(res);
+          this.successMessage = "Successfully Posted Property : " + this.address;
+          this.rent = null;
+          this.bedrooms = null;
+          this.bathrooms = null;
+          this.tenants = null;
+          this.owner = "";
+          this.type = "N/A";
+          this.address = "";
+          //console.log(res);
         },
         err => {
           console.log("Error occured");
-          console.log(err);
+          //console.log(err);
         }
       );
   }

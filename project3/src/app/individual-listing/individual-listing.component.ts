@@ -37,7 +37,7 @@ export class IndividualListingComponent implements OnInit {
     
     var data = {"address": id};
     console.log("search for call");
-    this.http.post('http://localhost:3000/api/propertyByAddress', data)
+    this.http.post('http://ec2-34-200-119-236.compute-1.amazonaws.com:3000/api/propertyByAddress', data)
     .subscribe(
 
       res => {

@@ -8,6 +8,14 @@
         padding-top: 200px;
     }
 }
+
+.mess{
+    font-family: 'Josefin Sans', Helvetica, Arial, sans-serif;
+    font-size: 24px;
+    color: rgb(32, 75, 218);
+    line-height: 40px;
+    font-weight: bold;
+}
 p {
     font-weight: bold;
 }
